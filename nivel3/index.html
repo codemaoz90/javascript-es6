@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- CSS only -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+			crossorigin="anonymous"
+		/>
+		<title>Document</title>
+	</head>
+	<body>
+		<main
+			class="container d-flex flex-column align-items-center justify-content-center vh-100 vw-100"
+		>
+			<h1>Buscador de nombres</h1>
+			<input
+				style="width: 30%"
+				type="search"
+				class="form-control ds-input"
+				id="myInput"
+				onkeyup="filterNames()"
+				placeholder="Buscar nombre .."
+			/>
+
+			<ul id="myUL" style="width: 30%">
+				<li><a href="#">Albert</a></li>
+				<li><a href="#">Ismael</a></li>
+				<li><a href="#">Luis</a></li>
+				<li><a href="#">Rubén</a></li>
+				<li><a href="#">Jonatan</a></li>
+				<li><a href="#">Jake</a></li>
+				<li><a href="#">Jose</a></li>
+			</ul>
+		</main>
+
+		<script>
+			function filterNames() {
+				let myInput = document.getElementById("myInput").value.toUpperCase();
+				let list = document.getElementsByTagName("li");
+
+				// comparar la tecla pulsada con el <li>
+				console.log(list[0].innerText.toUpperCase(), myInput);
+				for (let index = 0; index < list.length; index++) {
+					// console.log(myInput);
+					let liText = list[index].innerText;
+					if (liText.toUpperCase().indexOf(myInput) == 0) {
+						list[index].style.display = "list-item";
+					} else {
+						list[index].style.display = "none";
+					}
+				}
+			}
+		</script>
+		<!-- JavaScript Bundle with Popper -->
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+			crossorigin="anonymous"
+		></script>
+	</body>
+</html>
