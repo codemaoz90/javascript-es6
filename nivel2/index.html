@@ -13,24 +13,24 @@
 		<title>Document</title>
 	</head>
 	<body>
-		<main class="container d-flex flex-column justif vh-100 vw-100">
+		<main
+			class="container d-flex flex-column justify-content-center vh-100 w-50"
+		>
 			<div class="mb-3">
-				<label for="exampleInputEmail1" class="form-label">Email address</label>
-				<input class="form-control" id="n1" aria-describedby="emailHelp" />
-				<div id="emailHelp" class="form-text">
-					We'll never share your email with anyone else.
-				</div>
+				<label class="form-label">Ingrese numero 1:</label>
+				<input class="form-control" id="n1" type="number" />
 			</div>
 
 			<div class="mb-3">
-				<label for="exampleInputEmail1" class="form-label">Email address</label>
-				<input class="form-control" id="n2" aria-describedby="emailHelp" />
-				<div id="emailHelp" class="form-text">
-					We'll never share your email with anyone else.
-				</div>
-				<button type="submit" id="btn" class="btn btn-primary">Submit</button>
-				<table id="table"></table>
+				<label class="form-label">Ingrese numero 2:</label>
+				<input class="form-control" id="n2" type="number" />
+
+				<button type="submit" id="btn" class="btn btn-primary mt-3">
+					Submit
+				</button>
 			</div>
+
+			<div id="data"></div>
 		</main>
 
 		<script
